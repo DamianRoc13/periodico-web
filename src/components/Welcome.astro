@@ -1,0 +1,141 @@
+<section class="welcome">
+  <div class="welcome-content">
+    <div class="headline">
+      <h1>Proyectos Informáticos 2024-2025</h1>
+      <h2>Éxitos y Fracasos que Marcaron el Año</h2>
+    </div>
+    
+    <div class="intro">
+      <p class="lead">
+        Bienvenidos a esta edición especial de <strong>EXTRA</strong>, donde analizamos en profundidad los proyectos informáticos más relevantes del período Junio 2024 - Junio 2025.
+      </p>
+      
+      <p>
+        En este trabajo investigativo, exploramos cuatro casos emblemáticos: proyectos que fracasaron y tuvieron éxito tanto a nivel nacional como internacional. Cada caso ha sido cuidadosamente seleccionado y analizado para entender los factores que contribuyeron a su resultado.
+      </p>
+      
+      <p>
+        Descubra las historias detrás de estas iniciativas tecnológicas, los equipos que las desarrollaron, sus objetivos, costos, y las lecciones que podemos aprender de ellas.
+      </p>
+    </div>
+    
+    <div class="highlights">
+      <div class="highlight-item">
+        <h3>Proyectos Fracasados</h3>
+        <p>Analizamos las causas detrás de los fracasos más notables a nivel nacional e internacional.</p>
+      </div>
+      
+      <div class="highlight-item">
+        <h3>Proyectos Exitosos</h3>
+        <p>Exploramos los factores clave que llevaron al éxito a proyectos destacados en el ámbito tecnológico.</p>
+      </div>
+      
+      <div class="highlight-item">
+        <h3>Análisis Completo</h3>
+        <p>Cada proyecto incluye detalles sobre sus autores, descripción, efectos o motivos de fracaso, y costos asociados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .welcome {
+    margin-bottom: 3rem;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  .headline {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .headline h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-secondary);
+    line-height: 1.2;
+  }
+  
+  .headline h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--color-primary);
+    margin-top: 0;
+  }
+  
+  .headline::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-secondary);
+    margin: 1.5rem auto;
+  }
+  
+  .intro {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: justify;
+  }
+  
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+  }
+  
+  .highlight-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--color-accent);
+    border-radius: 4px;
+  }
+  
+  .highlight-item h3 {
+    font-family: var(--font-heading);
+    color: var(--color-secondary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .welcome {
+      padding: 1.5rem;
+    }
+    
+    .headline h1 {
+      font-size: 2.2rem;
+    }
+    
+    .headline h2 {
+      font-size: 1.5rem;
+    }
+    
+    .lead {
+      font-size: 1.1rem;
+    }
+    
+    .highlights {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+</style>

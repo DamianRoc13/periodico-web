@@ -1,0 +1,96 @@
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>EXTRA</h3>
+      <p>El Periódico Web dedicado a proyectos informáticos relevantes del período Junio 2024 - Junio 2025.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Secciones</h4>
+      <ul>
+        <li><a href="#nacional-fracasados">Proyectos Fracasados Nacionales</a></li>
+        <li><a href="#internacional-fracasados">Proyectos Fracasados Internacionales</a></li>
+        <li><a href="#nacional-exitosos">Proyectos Exitosos Nacionales</a></li>
+        <li><a href="#internacional-exitosos">Proyectos Exitosos Internacionales</a></li>
+        <li><a href="#bibliografia">Bibliografía</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Información</h4>
+      <p>Este periódico es un trabajo investigativo sobre proyectos informáticos relevantes.</p>
+      <p>Todos los proyectos analizados corresponden al período Junio 2024 - Junio 2025.</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>&copy; {new Date().getFullYear()} EXTRA - El Periódico Web. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 2rem 1rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-section h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-secondary);
+    margin-top: 0;
+  }
+
+  .footer-section h4 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-section a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

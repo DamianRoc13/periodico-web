@@ -1,0 +1,150 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+import ProjectSection from '../components/ProjectSection.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Bibliography from '../components/Bibliography.astro';
+
+// Sample project data
+const nationalFailedProject = {
+  title: "Sistema Integrado de Gestión Tributaria (SIGET)",
+  authors: ["Ministerio de Finanzas", "TechSolutions Ecuador"],
+  description: "Proyecto destinado a modernizar el sistema tributario nacional mediante una plataforma digital unificada. El objetivo era integrar todos los procesos tributarios en una sola plataforma, simplificando trámites para ciudadanos y empresas. El desarrollo comenzó en julio 2024 con un plazo de entrega de 10 meses.",
+  failureReasons: "El proyecto fracasó debido a múltiples factores: requisitos mal definidos que cambiaron constantemente durante el desarrollo, falta de coordinación entre los equipos técnicos y los expertos en normativa tributaria, y problemas de seguridad críticos detectados en las fases finales que comprometían datos sensibles de los contribuyentes. Adicionalmente, el sistema no logró la integración con bases de datos gubernamentales existentes.",
+  costs: "USD 4.8 millones invertidos antes de la cancelación del proyecto en abril 2025."
+};
+
+const internationalFailedProject = {
+  title: "HealthConnect Global",
+  authors: ["HealthTech International", "Global Health Organization"],
+  description: "Ambicioso proyecto de telemedicina diseñado para conectar hospitales y centros de salud en 15 países, permitiendo consultas remotas, compartir expedientes médicos y coordinar respuestas ante emergencias sanitarias. Iniciado en septiembre 2024, pretendía revolucionar la atención médica transfronteriza.",
+  failureReasons: "El proyecto colapsó debido a incompatibilidades regulatorias entre países que no fueron adecuadamente consideradas en la fase de planificación. Los estándares de protección de datos médicos variaban significativamente entre regiones, lo que hizo imposible implementar un sistema unificado. Además, la infraestructura tecnológica en varios países participantes resultó insuficiente para soportar las funcionalidades requeridas, y los costos de adaptación superaron ampliamente el presupuesto inicial.",
+  costs: "EUR 67 millones invertidos antes de su suspensión en mayo 2025, con solo 3 países habiendo implementado parcialmente el sistema."
+};
+
+const nationalSuccessfulProject = {
+  title: "EcoTransporte",
+  authors: ["Ministerio de Movilidad", "GreenTech Solutions"],
+  description: "Plataforma digital para optimizar el transporte público urbano mediante inteligencia artificial y análisis de datos en tiempo real. El sistema permite ajustar rutas y frecuencias según la demanda, reducir tiempos de espera y disminuir la huella de carbono del transporte público. Implementado inicialmente en tres ciudades principales del país desde octubre 2024.",
+  effects: "El proyecto ha logrado reducir los tiempos de espera en un 37%, disminuir el consumo de combustible en un 22% y aumentar el uso del transporte público en un 18% en las ciudades implementadas. La satisfacción de los usuarios ha aumentado significativamente, y el modelo está siendo adaptado para su implementación en otras cinco ciudades del país. Ha recibido reconocimiento internacional como ejemplo de innovación en movilidad sostenible.",
+  costs: "USD 3.2 millones, con un retorno de inversión estimado en 4 años gracias al ahorro en combustible y mantenimiento."
+};
+
+const internationalSuccessfulProject = {
+  title: "Quantum Shield",
+  authors: ["CyberDefense Alliance", "Instituto Internacional de Ciberseguridad"],
+  description: "Sistema de seguridad cibernética basado en criptografía cuántica para proteger infraestructuras críticas como redes eléctricas, sistemas financieros y servicios gubernamentales. Desarrollado por un consorcio internacional de expertos en seguridad y física cuántica, el proyecto comenzó en junio 2024 y se implementó progresivamente en 8 países.",
+  effects: "Quantum Shield ha demostrado ser 99.7% efectivo en la detección y neutralización de amenazas cibernéticas avanzadas, incluyendo ataques de actores estatales. Ha prevenido 17 ataques de gran escala que podrían haber causado daños estimados en billones de dólares. El sistema ha establecido un nuevo estándar en seguridad cibernética y ha impulsado la cooperación internacional en este ámbito. Además, ha generado avances significativos en la aplicación práctica de tecnologías cuánticas.",
+  costs: "USD 128 millones distribuidos entre los países participantes, con un ahorro estimado de USD 4.3 billones en potenciales daños evitados."
+};
+
+// Bibliography references
+const references = [
+  {
+    id: "ref1",
+    authors: "Ministerio de Finanzas",
+    year: "2025",
+    title: "Informe de Evaluación del Proyecto SIGET",
+    source: "Publicación Oficial del Ministerio de Finanzas",
+    url: "https://www.finanzas.gob.ec/informes/siget-2025",
+    accessDate: "10 de junio de 2025"
+  },
+  {
+    id: "ref2",
+    authors: "Rodríguez, M. & Johnson, P.",
+    year: "2025",
+    title: "Análisis de fracasos en proyectos de telemedicina transfronteriza: El caso HealthConnect",
+    source: "Journal of International Health Informatics, 15(3), 78-92",
+    url: "https://doi.org/10.1234/jihi.2025.15.3.78",
+    accessDate: "12 de junio de 2025"
+  },
+  {
+    id: "ref3",
+    authors: "Vega, A., Martínez, C., & López, J.",
+    year: "2025",
+    title: "EcoTransporte: Transformando la movilidad urbana mediante tecnologías inteligentes",
+    source: "Revista de Innovación en Transporte Sostenible, 8(2), 45-61",
+    url: "https://rits.edu/article/ecotransporte-2025",
+    accessDate: "15 de junio de 2025"
+  },
+  {
+    id: "ref4",
+    authors: "International Cybersecurity Institute",
+    year: "2025",
+    title: "Quantum Shield: Implementation and Impact Report",
+    source: "Annual Cybersecurity Review, Special Edition",
+    url: "https://ici.org/reports/quantum-shield-2025",
+    accessDate: "14 de junio de 2025"
+  },
+  {
+    id: "ref5",
+    authors: "Gómez, R.",
+    year: "2025",
+    title: "Lecciones aprendidas: Éxitos y fracasos en proyectos tecnológicos gubernamentales",
+    source: "Editorial TechGov, Primera Edición",
+    accessDate: "8 de junio de 2025"
+  }
+];
+---
+
+<Layout>
+  <Welcome />
+  
+  <ProjectSection 
+    title="Proyectos Fracasados a Nivel Nacional" 
+    description="Analizamos iniciativas tecnológicas nacionales que, a pesar de sus ambiciosos objetivos, no lograron alcanzar el éxito esperado. Estos casos nos ofrecen valiosas lecciones sobre los desafíos en la implementación de proyectos informáticos a gran escala en nuestro país."
+    id="nacional-fracasados"
+  >
+    <ProjectCard 
+      title={nationalFailedProject.title}
+      authors={nationalFailedProject.authors}
+      description={nationalFailedProject.description}
+      failureReasons={nationalFailedProject.failureReasons}
+      costs={nationalFailedProject.costs}
+    />
+  </ProjectSection>
+  
+  <ProjectSection 
+    title="Proyectos Fracasados a Nivel Internacional" 
+    description="Exploramos proyectos tecnológicos de alcance global que enfrentaron obstáculos insuperables. Estos casos ilustran la complejidad de coordinar iniciativas multinacionales y los retos específicos que surgen al operar en diferentes contextos regulatorios y culturales."
+    id="internacional-fracasados"
+  >
+    <ProjectCard 
+      title={internationalFailedProject.title}
+      authors={internationalFailedProject.authors}
+      description={internationalFailedProject.description}
+      failureReasons={internationalFailedProject.failureReasons}
+      costs={internationalFailedProject.costs}
+    />
+  </ProjectSection>
+  
+  <ProjectSection 
+    title="Proyectos Exitosos a Nivel Nacional" 
+    description="Destacamos iniciativas tecnológicas que han transformado positivamente diversos sectores en nuestro país. Estos proyectos demuestran cómo la innovación tecnológica bien implementada puede generar impactos significativos en la sociedad y la economía nacional."
+    id="nacional-exitosos"
+  >
+    <ProjectCard 
+      title={nationalSuccessfulProject.title}
+      authors={nationalSuccessfulProject.authors}
+      description={nationalSuccessfulProject.description}
+      effects={nationalSuccessfulProject.effects}
+      costs={nationalSuccessfulProject.costs}
+    />
+  </ProjectSection>
+  
+  <ProjectSection 
+    title="Proyectos Exitosos a Nivel Internacional" 
+    description="Analizamos proyectos tecnológicos que han logrado un impacto global significativo. Estos casos ejemplifican cómo la colaboración internacional y la aplicación innovadora de tecnologías avanzadas pueden abordar desafíos complejos que trascienden fronteras."
+    id="internacional-exitosos"
+  >
+    <ProjectCard 
+      title={internationalSuccessfulProject.title}
+      authors={internationalSuccessfulProject.authors}
+      description={internationalSuccessfulProject.description}
+      effects={internationalSuccessfulProject.effects}
+      costs={internationalSuccessfulProject.costs}
+    />
+  </ProjectSection>
+  
+  <Bibliography references={references} />
+</Layout>

@@ -1,0 +1,108 @@
+---
+export interface Reference {
+  id: string;
+  authors: string;
+  year: string;
+  title: string;
+  source: string;
+  url?: string;
+  accessDate?: string;
+}
+
+export interface Props {
+  references: Reference[];
+}
+
+const { references } = Astro.props;
+---
+
+<section class="bibliography" id="bibliografia">
+  <h2 class="bibliography-title">Bibliografía</h2>
+  
+  <div class="bibliography-description">
+    <p>Fuentes consultadas para la investigación de los proyectos informáticos presentados en este periódico.</p>
+  </div>
+  
+  <ul class="references-list">
+    {references.map((ref) => (
+      <li id={ref.id} class="reference-item">
+        <p class="reference-text">
+          {ref.authors} ({ref.year}). <em>{ref.title}</em>. {ref.source}.
+          {ref.url && (
+            <span> Recuperado de <a href={ref.url} target="_blank" rel="noopener noreferrer">{ref.url}</a>
+            {ref.accessDate && <span> [Consultado el {ref.accessDate}]</span>}
+            </span>
+          )}
+        </p>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .bibliography {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bibliography-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-secondary);
+    display: inline-block;
+  }
+  
+  .bibliography-description {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .references-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .reference-item {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+  }
+  
+  .reference-item::before {
+    content: "•";
+    position: absolute;
+    left: 0.5rem;
+    color: var(--color-secondary);
+    font-weight: bold;
+  }
+  
+  .reference-text {
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  .reference-text a {
+    word-break: break-word;
+  }
+  
+  @media (max-width: 768px) {
+    .bibliography {
+      padding: 1.5rem;
+    }
+    
+    .bibliography-title {
+      font-size: 1.8rem;
+    }
+    
+    .reference-item {
+      padding-left: 1.5rem;
+    }
+  }
+</style>

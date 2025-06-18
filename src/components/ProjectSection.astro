@@ -1,0 +1,82 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  id: string;
+}
+
+const { title, description, id } = Astro.props;
+---
+
+<section class="project-section" id={id}>
+  <div class="section-header">
+    <h2 class="section-title">{title}</h2>
+    <div class="section-description">
+      <p>{description}</p>
+    </div>
+  </div>
+  
+  <div class="projects-container">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .project-section {
+    margin: 3rem 0;
+    padding-top: 1rem;
+    padding: 2rem;
+  }
+  
+  .section-header {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-secondary);
+    display: inline-block;
+  }
+  
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+    max-width: 800px;
+    line-height: 1.6;
+  }
+  
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr));
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .section-description {
+      font-size: 1rem;
+    }
+    
+    .projects-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
