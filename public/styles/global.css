@@ -58,3 +58,23 @@
 		max-width: 100%;
 		height: auto;
 	}
+	.editorial-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    border-left: 4px solid var(--color-secondary);
+    background: #ffffff;
+    border-radius: 6px;
+  }
+  .editorial-text {
+    font-style: normal;
+    line-height: 1.7;
+    max-width: 800px;
+    margin-bottom: 1rem;
+  }
+  .editorial-list {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  .editorial-list li {
+    margin-bottom: 0.5rem;
+  }
