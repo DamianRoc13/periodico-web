@@ -17,7 +17,7 @@ const {
   effects, 
   failureReasons, 
   costs, 
-  imageUrl = '/senae-pro.jpeg', 
+  imageUrl, 
   imageAlt = 'Imagen del proyecto' 
 } = Astro.props;
 ---
@@ -99,9 +99,9 @@ const {
   
   .project-image {
     max-width: 100%;
-    max-height: 300px;
+    max-height: 100vh;
     object-fit: cover;
-    border: 1px solid #eee;
+    border: 1px solid #31313144;
   }
   
   .project-description h4,

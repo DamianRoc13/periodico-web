@@ -7,20 +7,21 @@ import Bibliography from '../components/Bibliography.astro';
 
 // Sample project data
 const nationalFailedProject = {
-  title: "Implementación EGSI v3 (Seguridad de Información Gobierno)",
-  authors: ["Ministerio de Telecomunicaciones y Sociedad de la Información (MINTEL)"],
-  description: "Proyecto nacional lanzado en marzo 2024 para aplicar el “Esquema Gubernamental de Seguridad de la Información” (EGSI v3) en todas las instituciones públicas, con plazo hasta el 28 de febrero de 2025.",
-  failureReasons: "1. Plazos demasiado ajustados considerando alcance nacional. 2. Falta de personal capacitado en cada institución. 3. Seguimiento institucional débil, sin protocolos unificados. 4. Recursos técnicos insuficientes para evaluaciones internas y mantenimiento continuo.",
-  costs: "Se estimó USD 11 millones para infraestructura, capacitación y centro de operaciones, pero la ejecución quedó incompleta al 28 feb 2025.",
-  imageUrl: "/senae-pro.jpeg"
+  title: "Sistema NOVA (Universidad de Cuenca)",
+  authors: ["Universidad de Cuenca", "Ellucian (proveedor del software)"],
+  description: "Nueva plataforma de gestión académica lanzada en febrero de 2025 por la Universidad de Cuenca. Su objetivo era optimizar procesos académicos, agilizar la matrícula, automatizar certificaciones, personalizar la planificación de matrículas y simplificar pagos en línea, buscando una transformación digital integral de la experiencia universitaria.",
+  failureReasons: "1. Problemas generalizados en la asignación de materias, acceso a cupos e inconsistencias en horarios, forzando procesos manuales en algunas facultades. 2. Discrepancia entre la narrativa oficial de éxito (100% matrículas en línea) y la experiencia real de la mayoría de estudiantes y docentes, quienes reportaron fallas constantes. 3. Deficiencias en la planificación y diseño que no consideraron las particularidades de cada facultad. 4. Gestión de proyectos y gobernanza inadecuadas, evidenciadas por la necesidad de crear una comisión de expertos para resolver problemas después del lanzamiento. 5. Falta de capacitación efectiva y comunicación con los usuarios finales, lo que dificultó la adopción y el uso correcto del sistema. 6. Posibles problemas de calidad de datos o integración con sistemas existentes, causando confusión en los pagos.",
+  costs: "La inversión directa en el sistema NOVA fue de $2.7 millones.",
+  imageUrl: "/nova.jpg"
 };
 
 const internationalFailedProject = {
-  title: "HealthConnect Global",
-  authors: ["HealthTech International", "Global Health Organization"],
-  description: "Ambicioso proyecto de telemedicina diseñado para conectar hospitales y centros de salud en 15 países, permitiendo consultas remotas, compartir expedientes médicos y coordinar respuestas ante emergencias sanitarias. Iniciado en septiembre 2024, pretendía revolucionar la atención médica transfronteriza.",
-  failureReasons: "El proyecto colapsó debido a incompatibilidades regulatorias entre países que no fueron adecuadamente consideradas en la fase de planificación. Los estándares de protección de datos médicos variaban significativamente entre regiones, lo que hizo imposible implementar un sistema unificado. Además, la infraestructura tecnológica en varios países participantes resultó insuficiente para soportar las funcionalidades requeridas, y los costos de adaptación superaron ampliamente el presupuesto inicial.",
-  costs: "EUR 67 millones invertidos antes de su suspensión en mayo 2025, con solo 3 países habiendo implementado parcialmente el sistema."
+  title: "Piloto de Pedidos por Voz con IA de McDonald's",
+  authors:["McDonald's."],
+  description: "McDonald's llevó a cabo un programa piloto para implementar un sistema de pedidos por voz basado en inteligencia artificial en sus autoservicios. La iniciativa buscaba automatizar la toma de pedidos para mejorar la eficiencia.",
+  failureReasons: "1. Errores y malinterpretaciones en los pedidos: La IA generaba fallas 'vergonzosas' y confusiones al tomar los pedidos, lo que resultaba en una experiencia frustrante para los clientes. 2. Inmadurez tecnológica: La tecnología no estaba lo suficientemente desarrollada ni era lo suficientemente robusta para un despliegue a gran escala en un entorno de alta demanda y variabilidad como el de un autoservicio. 3. Prioridad de la experiencia del cliente: McDonald's decidió abandonar la iniciativa para evitar alienar a sus clientes debido a los pedidos incorrectos y la insatisfacción generada.",
+  costs: "Los costos iniciales de hardware se estimaron entre $15,000 y $20,000 USD por unidad, con gastos anuales de software de $25,000 USD por unidad. Los costos de configuración inicial de un sistema de IA pueden ascender a millones de dólares, cubriendo desarrollo de software, instalación de hardware y mantenimiento continuo. Estas inversiones se consideran perdidas tras la terminación del programa a mediados de 2024.",
+  imageUrl: "/mcdonals.webp"
 };
 
 const nationalSuccessfulProject = {
@@ -29,6 +30,7 @@ const nationalSuccessfulProject = {
   description: "Desde mayo 2025 SENAE implementa Palantir Foundry, plataforma de IA para detección en tiempo real de contrabando y delito aduanero, integrando datos heterogéneos en puertos, aeropuertos y fronteras.",
   effects: "1. Detectó mercancías ilícitas por US$ 66 millones en 2024. 2. Mejoró la eficiencia operativa, redujo discrecionalidad, aumentó transparencia. 3. Estrategia exitosa que posiciona a Ecuador como líder regional en seguridad aduanera.",
   costs: "No se ha divulgado monto oficial, incluye licencias, servidores en centros CNT y formación continua —se estima inversión multimillonaria.",
+  imageUrl: "/senae-pro.jpeg"
 };
 
 const internationalSuccessfulProject = {
@@ -43,6 +45,7 @@ const internationalSuccessfulProject = {
   - Su integración en Windows 11 como asistente nativo ha redefinido la experiencia de usuario en sistemas operativos.
   `,
   costs: "Inversión directa de más de USD 13,000 millones en OpenAI, además de miles de millones adicionales en desarrollo, infraestructura y adquisición de hardware especializado (incluyendo chips y centros de datos).",
+  imageUrl: "/copilot.png"
 };
 
 
@@ -109,6 +112,7 @@ const references = [
       description={nationalFailedProject.description}
       failureReasons={nationalFailedProject.failureReasons}
       costs={nationalFailedProject.costs}
+      imageUrl={nationalFailedProject.imageUrl}
     />
   </ProjectSection>
   
@@ -123,6 +127,7 @@ const references = [
       description={internationalFailedProject.description}
       failureReasons={internationalFailedProject.failureReasons}
       costs={internationalFailedProject.costs}
+      imageUrl={internationalFailedProject.imageUrl}
     />
   </ProjectSection>
   
@@ -137,6 +142,7 @@ const references = [
       description={nationalSuccessfulProject.description}
       effects={nationalSuccessfulProject.effects}
       costs={nationalSuccessfulProject.costs}
+      imageUrl={nationalSuccessfulProject.imageUrl}
     />
   </ProjectSection>
   
@@ -151,6 +157,7 @@ const references = [
       description={internationalSuccessfulProject.description}
       effects={internationalSuccessfulProject.effects}
       costs={internationalSuccessfulProject.costs}
+      imageUrl={internationalSuccessfulProject.imageUrl}
     />
   </ProjectSection>
   
