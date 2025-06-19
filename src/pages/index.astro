@@ -7,11 +7,12 @@ import Bibliography from '../components/Bibliography.astro';
 
 // Sample project data
 const nationalFailedProject = {
-  title: "Sistema Integrado de Gestión Tributaria (SIGET)",
-  authors: ["Ministerio de Finanzas", "TechSolutions Ecuador"],
-  description: "Proyecto destinado a modernizar el sistema tributario nacional mediante una plataforma digital unificada. El objetivo era integrar todos los procesos tributarios en una sola plataforma, simplificando trámites para ciudadanos y empresas. El desarrollo comenzó en julio 2024 con un plazo de entrega de 10 meses.",
-  failureReasons: "El proyecto fracasó debido a múltiples factores: requisitos mal definidos que cambiaron constantemente durante el desarrollo, falta de coordinación entre los equipos técnicos y los expertos en normativa tributaria, y problemas de seguridad críticos detectados en las fases finales que comprometían datos sensibles de los contribuyentes. Adicionalmente, el sistema no logró la integración con bases de datos gubernamentales existentes.",
-  costs: "USD 4.8 millones invertidos antes de la cancelación del proyecto en abril 2025."
+  title: "Implementación EGSI v3 (Seguridad de Información Gobierno)",
+  authors: ["Ministerio de Telecomunicaciones y Sociedad de la Información (MINTEL)"],
+  description: "Proyecto nacional lanzado en marzo 2024 para aplicar el “Esquema Gubernamental de Seguridad de la Información” (EGSI v3) en todas las instituciones públicas, con plazo hasta el 28 de febrero de 2025.",
+  failureReasons: "1. Plazos demasiado ajustados considerando alcance nacional. 2. Falta de personal capacitado en cada institución. 3. Seguimiento institucional débil, sin protocolos unificados. 4. Recursos técnicos insuficientes para evaluaciones internas y mantenimiento continuo.",
+  costs: "Se estimó USD 11 millones para infraestructura, capacitación y centro de operaciones, pero la ejecución quedó incompleta al 28 feb 2025.",
+  imageUrl: "/senae-pro.jpeg"
 };
 
 const internationalFailedProject = {
@@ -23,20 +24,27 @@ const internationalFailedProject = {
 };
 
 const nationalSuccessfulProject = {
-  title: "EcoTransporte",
-  authors: ["Ministerio de Movilidad", "GreenTech Solutions"],
-  description: "Plataforma digital para optimizar el transporte público urbano mediante inteligencia artificial y análisis de datos en tiempo real. El sistema permite ajustar rutas y frecuencias según la demanda, reducir tiempos de espera y disminuir la huella de carbono del transporte público. Implementado inicialmente en tres ciudades principales del país desde octubre 2024.",
-  effects: "El proyecto ha logrado reducir los tiempos de espera en un 37%, disminuir el consumo de combustible en un 22% y aumentar el uso del transporte público en un 18% en las ciudades implementadas. La satisfacción de los usuarios ha aumentado significativamente, y el modelo está siendo adaptado para su implementación en otras cinco ciudades del país. Ha recibido reconocimiento internacional como ejemplo de innovación en movilidad sostenible.",
-  costs: "USD 3.2 millones, con un retorno de inversión estimado en 4 años gracias al ahorro en combustible y mantenimiento."
+  title: "Plataforma IA Aduanas (SENAE‑Palantir)",
+  authors: ["Servicio Nacional de Aduanas del Ecuador (SENAE)", "CNT", "Palantir Technologies"],
+  description: "Desde mayo 2025 SENAE implementa Palantir Foundry, plataforma de IA para detección en tiempo real de contrabando y delito aduanero, integrando datos heterogéneos en puertos, aeropuertos y fronteras.",
+  effects: "1. Detectó mercancías ilícitas por US$ 66 millones en 2024. 2. Mejoró la eficiencia operativa, redujo discrecionalidad, aumentó transparencia. 3. Estrategia exitosa que posiciona a Ecuador como líder regional en seguridad aduanera.",
+  costs: "No se ha divulgado monto oficial, incluye licencias, servidores en centros CNT y formación continua —se estima inversión multimillonaria.",
 };
 
 const internationalSuccessfulProject = {
-  title: "Quantum Shield",
-  authors: ["CyberDefense Alliance", "Instituto Internacional de Ciberseguridad"],
-  description: "Sistema de seguridad cibernética basado en criptografía cuántica para proteger infraestructuras críticas como redes eléctricas, sistemas financieros y servicios gubernamentales. Desarrollado por un consorcio internacional de expertos en seguridad y física cuántica, el proyecto comenzó en junio 2024 y se implementó progresivamente en 8 países.",
-  effects: "Quantum Shield ha demostrado ser 99.7% efectivo en la detección y neutralización de amenazas cibernéticas avanzadas, incluyendo ataques de actores estatales. Ha prevenido 17 ataques de gran escala que podrían haber causado daños estimados en billones de dólares. El sistema ha establecido un nuevo estándar en seguridad cibernética y ha impulsado la cooperación internacional en este ámbito. Además, ha generado avances significativos en la aplicación práctica de tecnologías cuánticas.",
-  costs: "USD 128 millones distribuidos entre los países participantes, con un ahorro estimado de USD 4.3 billones en potenciales daños evitados."
+  title: "Microsoft Copilot",
+  authors: ["Microsoft", "OpenAI"],
+  description: "Asistente de inteligencia artificial generativa integrado en el ecosistema de Microsoft, incluyendo Windows, Microsoft 365 (Word, Excel, Outlook, Teams, etc.) y Azure. Utiliza modelos de lenguaje avanzados para aumentar la productividad, automatizar tareas y facilitar la toma de decisiones en entornos personales, empresariales y educativos.",
+  effects: `
+  - En 2024 y 2025, se convirtió en uno de los productos de más rápido crecimiento en la historia de Microsoft.
+  - Impulsó significativamente los ingresos comerciales, con miles de millones de dólares generados por licencias Copilot en productos Office y Azure.
+  - Estableció un nuevo estándar en el software de productividad, forzando a competidores como Google a responder con soluciones similares.
+  - Aceleró la adopción de la nube Azure y la transformación digital en empresas a nivel global.
+  - Su integración en Windows 11 como asistente nativo ha redefinido la experiencia de usuario en sistemas operativos.
+  `,
+  costs: "Inversión directa de más de USD 13,000 millones en OpenAI, además de miles de millones adicionales en desarrollo, infraestructura y adquisición de hardware especializado (incluyendo chips y centros de datos).",
 };
+
 
 // Bibliography references
 const references = [
